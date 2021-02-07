@@ -2,24 +2,25 @@ import partida
 
 class Menu:
 
-    def caminho(self):
-        return partida.Partidas()
+    def caminho(self, numero_pecas, limite_pecas_por_jogada):
+        return partida.Partidas(numero_pecas, limite_pecas_por_jogada)
 
     def cabecalho(self):
-        print('Bem-vindo ao jogo do NIM!\n\nOpções de jogo:\n')
+        print('Bem-vindo ao jogo do NIM!\n')
+        numero_pecas = int(input('Digite a quantidade de peças no tabuleiro:  '))
+        limite_pecas_por_jogada = int(input('Digite o limite de retirada de peça por jogada: '))
+        print('\nOpções de jogo:\n')
         print('1- Para jogar uma partida isolada\n2- Para jogar um campeonato\n')
         escolha = int(input('Digite uma opção para iniciarmos o jogo: '))
+        self.caminho(numero_pecas, limite_pecas_por_jogada)
         if escolha == 1:
             self.partida_unica()
         else:
             self.campeonato()
 
-    def novo():
-
     def partida_unica(self):
         print('Você escolheu uma partida isolada!\n')
         print('******PARTIDA******\n')
-        partida_isolada = caminho.partida()
         if partida_isolada == 1:
             print('Fim do jogo! Você ganhou!\n')
         else:
@@ -41,10 +42,3 @@ class Menu:
                 vencedor_maquina += 1
                 print('O computador ganhou a ' + str(i + 1) + 'º disputa\n')
         print('Placar: Você', vencedor_usuario, 'X', vencedor_maquina, 'Computador')
-
-
-    def coleta_dados(self):
-        numero_pecas = int(input('Digite a quantidade de peças no tabuleiro:  '))
-        limite_pecas_por_jogada = int(input('Digite o limite de retirada de peça por jogada: '))
-
-        return numero_pecas, limite_pecas_por_jogada
