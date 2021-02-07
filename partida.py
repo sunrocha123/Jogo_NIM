@@ -47,7 +47,7 @@ class Partidas:
             else:
                 print('Oops! Jogada inválida! Tente de novo.')
                 pass
-            pass'''
+            pass''' # Campo desabilitado para realização de testes
         return limite_pecas_por_jogada - 1
 
     def computador_escolhe_jogada(self, numero_pecas, limite_pecas_por_jogada):
